@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Meta attributes list</h1>
+    <ul>
+        {% for key, value in meta.items %}
+            <li>
+                <strong>{{ key }}</strong>: {{value}}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

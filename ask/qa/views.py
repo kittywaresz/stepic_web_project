@@ -1,9 +1,19 @@
 from django.http import HttpResponse
-
-
-def test(request, *args, **kwargs):
-    return HttpResponse('OK')
+from django.template import loader
 
 
 def index(request, *args, **kwargs):
-    return HttpResponse("Hello, world. You're at the polls index.")
+    # print('GET', request.GET)
+    # print('POST', request.POST)
+    # print('COOKIES', request.COOKIES)
+    # print('FILES', request.FILES)
+    # print('META', request.META)
+
+    template = loader.get_template('index.html')
+
+    return HttpResponse(template.render(
+        {
+            'meta': request.META
+        },
+        request)
+    )
