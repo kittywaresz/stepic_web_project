@@ -2,4 +2,5 @@
 
 sudo /etc/init.d/mysql start
 
-mysql -u root -e "create database stepik_ask_app default character set utf8 default collate utf8_general_ci"
+mysql -uroot -proot -e "CREATE DATABASE stepik_ask_app;"
+mysql -uroot -proot -e "GRANT ALL PRIVILEGES ON stepik_ask_app.* TO 'root'@'localhost' WITH GRANT OPTION;"

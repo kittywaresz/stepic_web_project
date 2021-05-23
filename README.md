@@ -1,7 +1,7 @@
 # Scripts to run
 
-1. `python.sh`
-2. `database.sh`
-3. activate venv and install all required dependencies from requirements.txt
-4. `app.sh`
+1. `git clone https://github.com/kittywaresz/stepic_web_project.git web`
+2. `python.sh`
+3. `database.sh`
+4. `migrate.sh`
 5. `server.sh`
