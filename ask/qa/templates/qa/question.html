@@ -1,0 +1,11 @@
+<h3>Question #{{ object.pk }}</h3>
+<p>Title: {{ object.title }}</p>
+<p>Text: {{ object.text }}</p>
+<div>
+    Answers:
+    <ul>
+        {% for answer in object.answer_set.all %}
+            <li>{{ answer.text }} - {{ answer.author.username }}</li>
+        {% endfor %}
+    </ul>
+</div>

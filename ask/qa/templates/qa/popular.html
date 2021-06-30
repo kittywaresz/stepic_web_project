@@ -1,0 +1,31 @@
+<div>
+    <h2>Popular questions</h2>
+
+    <ul>
+        {% for question in page.object_list %}
+            <li>
+                Title: {{ question.title }}
+                <br>
+                <a href="{% url 'question' pk=question.pk %}">Details</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <div>
+        Current page: {{ page.number }}
+
+        {% if page.has_next %}
+            <p>
+                <a href="{% url 'popular' %}?page={{ page.next_page_number }}">Next page</a>
+            </p>
+        {% endif %}
+
+        {% if page.has_previous %}
+            <p>
+                <a href="{% url 'popular' %}?page={{ page.previous_page_number }}">Previous page</a>
+            </p>
+        {% endif %}
+    </div>
+</div>
+
+
