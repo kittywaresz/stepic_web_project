@@ -2,6 +2,14 @@
 <p>Title: {{ object.title }}</p>
 <p>Text: {{ object.text }}</p>
 <div>
+    <form method="post" action="{% url 'question' pk=object.pk %}">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">Answer</button>
+    </form>
+
     Answers:
     <ul>
         {% for answer in object.answer_set.all %}
